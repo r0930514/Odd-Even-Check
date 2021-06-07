@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
 final ThemeData mytheme = new ThemeData(
     primarySwatch: Colors.green,
     primaryColor: Colors.green,
     brightness: Brightness.light);
+
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -31,13 +31,13 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+//Myhome Page
 class _MyHomePageState extends State<MyHomePage> {
   String displayText = '';
 
   //文字輸入框變數定義
   final TextEditingController textInput = new TextEditingController();
   final TextEditingController alertTextInput = new TextEditingController();
-  get child => null;
 
   //彈出輸入框
   void _showdialog() {
@@ -139,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           IconButton(
               onPressed: () {
-                displayText = '哈囉';
+                displayText = 'hollo world';
                 alertresult();
               },
               icon: Icon(
@@ -147,6 +147,37 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.white,
               ))
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+                decoration: BoxDecoration(color: Colors.green),
+                child: Center(
+                  child: SizedBox(
+                    width: 60,
+                    height: 60,
+                    child: CircleAvatar(
+                      child: Text('data'),
+                    ),
+                  ),
+                )),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text('關於'),
+              onTap: () {
+                Navigator.pop(context);
+                displayText = 'hollo world';
+                alertresult();
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.book),
+              title: Text('第二頁'),
+              onTap: () {},
+            )
+          ],
+        ),
       ),
       body: Center(
         child: Column(
