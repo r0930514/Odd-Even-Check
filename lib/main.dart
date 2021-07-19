@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+var kprimarycolor = Colors.green;
 final ThemeData mytheme = new ThemeData(
-    primarySwatch: Colors.green,
-    primaryColor: Colors.green,
+    primarySwatch: kprimarycolor,
+    primaryColor: kprimarycolor,
     brightness: Brightness.light);
 
 void main() {
@@ -138,10 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         actions: [
           IconButton(
-              onPressed: () {
-                displayText = 'hollo world';
-                alertresult();
-              },
+              onPressed: () {},
               icon: Icon(
                 Icons.favorite_border,
                 color: Colors.white,
